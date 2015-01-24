@@ -126,10 +126,97 @@
 		68E08316146F2749001C4EDF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68E08314146F2749001C4EDF /* InfoPlist.strings */; };
 		68EBC2D61613394D00E8E799 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68EBC2D51613394D00E8E799 /* QuartzCore.framework */; };
 		68F19D1F14EB3A9C00B772CB /* CharacterSetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F19D1E14EB3A9C00B772CB /* CharacterSetsViewController.m */; };
-		E85C12251A67042F006F97A8 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E85C12241A67042F006F97A8 /* ActionViewController.m */; };
-		E85C12271A67042F006F97A8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85C12261A67042F006F97A8 /* MainInterface.storyboard */; };
 		E85C122A1A67042F006F97A8 /* WebExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E85C121F1A67042F006F97A8 /* WebExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E85C12301A6704EA006F97A8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 522D8F9D17E35B0E00BCA329 /* Images.xcassets */; };
+		E8B1C3991A73D11E00007487 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B1C3981A73D11E00007487 /* MainViewController.m */; };
+		E8B1C39B1A73D40800007487 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689DFFDB13A4273F005EBD36 /* Foundation.framework */; };
+		E8B1C3A11A73D9B800007487 /* SelectFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B1C39F1A73D9B800007487 /* SelectFileViewController.m */; };
+		E8B1C3A41A73DA0E00007487 /* ExtensionCore.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B1C3A31A73DA0E00007487 /* ExtensionCore.m */; };
+		E8B1C3A51A73DED500007487 /* Base64.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02B713A42B63005EBD36 /* Base64.h */; };
+		E8B1C3A61A73DED500007487 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02B813A42B63005EBD36 /* Base64.m */; };
+		E8B1C3A71A73DED500007487 /* DDXMLDocument+MKPAdditions.h in Sources */ = {isa = PBXBuildFile; fileRef = 680C277416050C7A009403DE /* DDXMLDocument+MKPAdditions.h */; };
+		E8B1C3A81A73DED500007487 /* DDXMLDocument+MKPAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 680C277516050C7A009403DE /* DDXMLDocument+MKPAdditions.m */; };
+		E8B1C3A91A73DED500007487 /* Kdb.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02C713A42B63005EBD36 /* Kdb.h */; };
+		E8B1C3AA1A73DED500007487 /* Kdb.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02C813A42B63005EBD36 /* Kdb.m */; };
+		E8B1C3AB1A73DED500007487 /* Kdb3Date.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02C913A42B63005EBD36 /* Kdb3Date.h */; };
+		E8B1C3AC1A73DED500007487 /* Kdb3Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02CA13A42B63005EBD36 /* Kdb3Date.m */; };
+		E8B1C3AD1A73DED500007487 /* Kdb3Node.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02CB13A42B63005EBD36 /* Kdb3Node.h */; };
+		E8B1C3AE1A73DED500007487 /* Kdb3Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02CC13A42B63005EBD36 /* Kdb3Node.m */; };
+		E8B1C3AF1A73DED500007487 /* Kdb3Reader.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D113A42B63005EBD36 /* Kdb3Reader.h */; };
+		E8B1C3B01A73DED500007487 /* Kdb3Reader.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D213A42B63005EBD36 /* Kdb3Reader.m */; };
+		E8B1C3B11A73DED500007487 /* Kdb3Utils.h in Sources */ = {isa = PBXBuildFile; fileRef = 685D9D931603F8EE00D739D3 /* Kdb3Utils.h */; };
+		E8B1C3B21A73DED500007487 /* Kdb3Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 685D9D941603F8EE00D739D3 /* Kdb3Utils.m */; };
+		E8B1C3B31A73DED500007487 /* Kdb3Writer.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D313A42B63005EBD36 /* Kdb3Writer.h */; };
+		E8B1C3B41A73DED500007487 /* Kdb3Writer.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D413A42B63005EBD36 /* Kdb3Writer.m */; };
+		E8B1C3B51A73DED500007487 /* Kdb4Node.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D513A42B63005EBD36 /* Kdb4Node.h */; };
+		E8B1C3B61A73DED500007487 /* Kdb4Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D613A42B63005EBD36 /* Kdb4Node.m */; };
+		E8B1C3B71A73DED500007487 /* Kdb4Parser.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D713A42B63005EBD36 /* Kdb4Parser.h */; };
+		E8B1C3B81A73DED500007487 /* Kdb4Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D813A42B63005EBD36 /* Kdb4Parser.m */; };
+		E8B1C3B91A73DED500007487 /* Kdb4Persist.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02D913A42B63005EBD36 /* Kdb4Persist.h */; };
+		E8B1C3BA1A73DED500007487 /* Kdb4Persist.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02DA13A42B63005EBD36 /* Kdb4Persist.m */; };
+		E8B1C3BB1A73DED500007487 /* Kdb4Reader.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02DB13A42B63005EBD36 /* Kdb4Reader.h */; };
+		E8B1C3BC1A73DED500007487 /* Kdb4Reader.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02DC13A42B63005EBD36 /* Kdb4Reader.m */; };
+		E8B1C3BD1A73DED500007487 /* Kdb4Writer.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02DD13A42B63005EBD36 /* Kdb4Writer.h */; };
+		E8B1C3BE1A73DED500007487 /* Kdb4Writer.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02DE13A42B63005EBD36 /* Kdb4Writer.m */; };
+		E8B1C3BF1A73DED500007487 /* KdbLib.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02DF13A42B63005EBD36 /* KdbLib.h */; };
+		E8B1C3C01A73DED500007487 /* KdbPassword.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E013A42B63005EBD36 /* KdbPassword.h */; };
+		E8B1C3C11A73DED500007487 /* KdbPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E113A42B63005EBD36 /* KdbPassword.m */; };
+		E8B1C3C21A73DED500007487 /* KdbReader.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E213A42B63005EBD36 /* KdbReader.h */; };
+		E8B1C3C31A73DED500007487 /* KdbReaderFactory.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E313A42B63005EBD36 /* KdbReaderFactory.h */; };
+		E8B1C3C41A73DED500007487 /* KdbReaderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E413A42B63005EBD36 /* KdbReaderFactory.m */; };
+		E8B1C3C51A73DED500007487 /* KdbWriter.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E513A42B63005EBD36 /* KdbWriter.h */; };
+		E8B1C3C61A73DED500007487 /* KdbWriterFactory.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E613A42B63005EBD36 /* KdbWriterFactory.h */; };
+		E8B1C3C71A73DED500007487 /* KdbWriterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02E713A42B63005EBD36 /* KdbWriterFactory.m */; };
+		E8B1C3C81A73DED500007487 /* RandomStream.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02EA13A42B63005EBD36 /* RandomStream.h */; };
+		E8B1C3C91A73DED500007487 /* RandomStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 689A4D1214046B8200AA897D /* RandomStream.m */; };
+		E8B1C3CA1A73DED500007487 /* Salsa20RandomStream.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02EB13A42B63005EBD36 /* Salsa20RandomStream.h */; };
+		E8B1C3CB1A73DED500007487 /* Salsa20RandomStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02EC13A42B63005EBD36 /* Salsa20RandomStream.m */; };
+		E8B1C3CC1A73DED500007487 /* Utils.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02EF13A42B63005EBD36 /* Utils.h */; };
+		E8B1C3CD1A73DED500007487 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02F013A42B63005EBD36 /* Utils.m */; };
+		E8B1C3CE1A73DED500007487 /* UUID.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02F113A42B63005EBD36 /* UUID.h */; };
+		E8B1C3CF1A73DED500007487 /* UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02F213A42B63005EBD36 /* UUID.m */; };
+		E8B1C3D01A73DF1B00007487 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689D000E13A42776005EBD36 /* Security.framework */; };
+		E8B1C3D11A73DF6300007487 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 689D001013A4277E005EBD36 /* libxml2.dylib */; };
+		E8B1C3D21A73DF6300007487 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 689D001213A42784005EBD36 /* libz.dylib */; };
+		E8B1C3D31A73DFFC00007487 /* AesInputStream.h in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F11603883900156830 /* AesInputStream.h */; };
+		E8B1C3D41A73DFFC00007487 /* AesInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F21603883900156830 /* AesInputStream.m */; };
+		E8B1C3D51A73DFFC00007487 /* AesOutputStream.h in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F31603883900156830 /* AesOutputStream.h */; };
+		E8B1C3D61A73DFFC00007487 /* AesOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F41603883900156830 /* AesOutputStream.m */; };
+		E8B1C3D91A73E03D00007487 /* ExtensionSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B1C3D81A73E03D00007487 /* ExtensionSettings.m */; };
+		E8B1C3DA1A73E13700007487 /* Arc4RandomStream.h in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F51603883900156830 /* Arc4RandomStream.h */; };
+		E8B1C3DB1A73E13700007487 /* Arc4RandomStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F61603883900156830 /* Arc4RandomStream.m */; };
+		E8B1C3DC1A73E13700007487 /* DataInputStream.h in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F71603883900156830 /* DataInputStream.h */; };
+		E8B1C3DD1A73E13700007487 /* DataInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F81603883900156830 /* DataInputStream.m */; };
+		E8B1C3DE1A73E13700007487 /* DataOutputStream.h in Sources */ = {isa = PBXBuildFile; fileRef = 682D44F91603883900156830 /* DataOutputStream.h */; };
+		E8B1C3DF1A73E13700007487 /* DataOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44FA1603883900156830 /* DataOutputStream.m */; };
+		E8B1C3E01A73E13700007487 /* FileInputStream.h in Sources */ = {isa = PBXBuildFile; fileRef = 682D44FB1603883900156830 /* FileInputStream.h */; };
+		E8B1C3E11A73E13700007487 /* FileInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44FC1603883900156830 /* FileInputStream.m */; };
+		E8B1C3E21A73E13700007487 /* FileOutputStream.h in Sources */ = {isa = PBXBuildFile; fileRef = 682D44FD1603883900156830 /* FileOutputStream.h */; };
+		E8B1C3E31A73E13700007487 /* FileOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D44FE1603883900156830 /* FileOutputStream.m */; };
+		E8B1C3E41A73E13700007487 /* GZipInputStream.h in Sources */ = {isa = PBXBuildFile; fileRef = 682D44FF1603883900156830 /* GZipInputStream.h */; };
+		E8B1C3E51A73E13700007487 /* GZipInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45001603883900156830 /* GZipInputStream.m */; };
+		E8B1C3E61A73E13700007487 /* GZipOutputStream.h in Sources */ = {isa = PBXBuildFile; fileRef = 682D45011603883900156830 /* GZipOutputStream.h */; };
+		E8B1C3E71A73E13700007487 /* GZipOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45021603883900156830 /* GZipOutputStream.m */; };
+		E8B1C3E81A73E13700007487 /* HashedInputStream.h in Sources */ = {isa = PBXBuildFile; fileRef = 682D45031603883900156830 /* HashedInputStream.h */; };
+		E8B1C3E91A73E13700007487 /* HashedInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45041603883900156830 /* HashedInputStream.m */; };
+		E8B1C3EA1A73E13700007487 /* HashedOutputStream.h in Sources */ = {isa = PBXBuildFile; fileRef = 682D45051603883900156830 /* HashedOutputStream.h */; };
+		E8B1C3EB1A73E13700007487 /* HashedOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45061603883900156830 /* HashedOutputStream.m */; };
+		E8B1C3EC1A73E13700007487 /* InputStream.h in Sources */ = {isa = PBXBuildFile; fileRef = 682D45071603883900156830 /* InputStream.h */; };
+		E8B1C3ED1A73E13700007487 /* InputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D45081603883900156830 /* InputStream.m */; };
+		E8B1C3EE1A73E13700007487 /* OutputStream.h in Sources */ = {isa = PBXBuildFile; fileRef = 682D45091603883900156830 /* OutputStream.h */; };
+		E8B1C3EF1A73E13700007487 /* OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D450A1603883900156830 /* OutputStream.m */; };
+		E8B1C3F01A73E13700007487 /* Sha256OutputStream.h in Sources */ = {isa = PBXBuildFile; fileRef = 682D450B1603883900156830 /* Sha256OutputStream.h */; };
+		E8B1C3F11A73E13700007487 /* Sha256OutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D450C1603883900156830 /* Sha256OutputStream.m */; };
+		E8B1C3F21A73E14300007487 /* KeychainUtils.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D032A13A42B63005EBD36 /* KeychainUtils.h */; };
+		E8B1C3F31A73E14300007487 /* KeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D032B13A42B63005EBD36 /* KeychainUtils.m */; };
+		E8B1C3F41A73E17E00007487 /* FilesInfoView.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D042C13A42C81005EBD36 /* FilesInfoView.h */; };
+		E8B1C3F51A73E17E00007487 /* FilesInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D042D13A42C81005EBD36 /* FilesInfoView.m */; };
+		E8B1C3F61A73E19E00007487 /* DDXMLDocument.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02FB13A42B63005EBD36 /* DDXMLDocument.h */; };
+		E8B1C3F71A73E19E00007487 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02FC13A42B63005EBD36 /* DDXMLDocument.m */; };
+		E8B1C3F81A73E19E00007487 /* DDXMLElement.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02FD13A42B63005EBD36 /* DDXMLElement.h */; };
+		E8B1C3F91A73E19E00007487 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D02FE13A42B63005EBD36 /* DDXMLElement.m */; };
+		E8B1C3FA1A73E19E00007487 /* DDXMLNode.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D02FF13A42B63005EBD36 /* DDXMLNode.h */; };
+		E8B1C3FB1A73E19E00007487 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D030013A42B63005EBD36 /* DDXMLNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -403,9 +490,15 @@
 		BDB0FF5F194C7C6F00C44DEF /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E85C121F1A67042F006F97A8 /* WebExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WebExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85C12221A67042F006F97A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E85C12231A67042F006F97A8 /* ActionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionViewController.h; sourceTree = "<group>"; };
-		E85C12241A67042F006F97A8 /* ActionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
-		E85C12261A67042F006F97A8 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		E8B1C3981A73D11E00007487 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		E8B1C39A1A73D18900007487 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		E8B1C39E1A73D9B800007487 /* SelectFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectFileViewController.h; sourceTree = "<group>"; };
+		E8B1C39F1A73D9B800007487 /* SelectFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectFileViewController.m; sourceTree = "<group>"; };
+		E8B1C3A21A73DA0E00007487 /* ExtensionCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionCore.h; sourceTree = "<group>"; };
+		E8B1C3A31A73DA0E00007487 /* ExtensionCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtensionCore.m; sourceTree = "<group>"; };
+		E8B1C3D71A73E03D00007487 /* ExtensionSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionSettings.h; sourceTree = "<group>"; };
+		E8B1C3D81A73E03D00007487 /* ExtensionSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtensionSettings.m; sourceTree = "<group>"; };
+		E8C4F1471A683AC90012CC4E /* WebExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WebExtension.entitlements; sourceTree = "<group>"; };
 		EFD785BA15B3D02600B9A276 /* zh-Hans */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		EFD785BB15B3D03F00B9A276 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -432,6 +525,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8B1C39B1A73D40800007487 /* Foundation.framework in Frameworks */,
+				E8B1C3D01A73DF1B00007487 /* Security.framework in Frameworks */,
+				E8B1C3D11A73DF6300007487 /* libxml2.dylib in Frameworks */,
+				E8B1C3D21A73DF6300007487 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -824,10 +921,16 @@
 		E85C12201A67042F006F97A8 /* WebExtension */ = {
 			isa = PBXGroup;
 			children = (
-				E85C12231A67042F006F97A8 /* ActionViewController.h */,
-				E85C12241A67042F006F97A8 /* ActionViewController.m */,
-				E85C12261A67042F006F97A8 /* MainInterface.storyboard */,
+				E8B1C3D71A73E03D00007487 /* ExtensionSettings.h */,
+				E8B1C3D81A73E03D00007487 /* ExtensionSettings.m */,
+				E8B1C3A21A73DA0E00007487 /* ExtensionCore.h */,
+				E8B1C3A31A73DA0E00007487 /* ExtensionCore.m */,
+				E8B1C39E1A73D9B800007487 /* SelectFileViewController.h */,
+				E8B1C39F1A73D9B800007487 /* SelectFileViewController.m */,
+				E8C4F1471A683AC90012CC4E /* WebExtension.entitlements */,
 				E85C12211A67042F006F97A8 /* Supporting Files */,
+				E8B1C39A1A73D18900007487 /* MainViewController.h */,
+				E8B1C3981A73D11E00007487 /* MainViewController.m */,
 			);
 			path = WebExtension;
 			sourceTree = "<group>";
@@ -892,6 +995,9 @@
 					689DFFD413A4273F005EBD36 = {
 						DevelopmentTeam = Z4HCNH44A4;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};
@@ -900,6 +1006,11 @@
 					E85C121E1A67042F006F97A8 = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = Z4HCNH44A4;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -984,7 +1095,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E85C12301A6704EA006F97A8 /* Images.xcassets in Resources */,
-				E85C12271A67042F006F97A8 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1103,7 +1213,91 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E85C12251A67042F006F97A8 /* ActionViewController.m in Sources */,
+				E8B1C3F61A73E19E00007487 /* DDXMLDocument.h in Sources */,
+				E8B1C3F71A73E19E00007487 /* DDXMLDocument.m in Sources */,
+				E8B1C3F81A73E19E00007487 /* DDXMLElement.h in Sources */,
+				E8B1C3F91A73E19E00007487 /* DDXMLElement.m in Sources */,
+				E8B1C3FA1A73E19E00007487 /* DDXMLNode.h in Sources */,
+				E8B1C3FB1A73E19E00007487 /* DDXMLNode.m in Sources */,
+				E8B1C3F41A73E17E00007487 /* FilesInfoView.h in Sources */,
+				E8B1C3F51A73E17E00007487 /* FilesInfoView.m in Sources */,
+				E8B1C3F21A73E14300007487 /* KeychainUtils.h in Sources */,
+				E8B1C3F31A73E14300007487 /* KeychainUtils.m in Sources */,
+				E8B1C3DA1A73E13700007487 /* Arc4RandomStream.h in Sources */,
+				E8B1C3DB1A73E13700007487 /* Arc4RandomStream.m in Sources */,
+				E8B1C3DC1A73E13700007487 /* DataInputStream.h in Sources */,
+				E8B1C3DD1A73E13700007487 /* DataInputStream.m in Sources */,
+				E8B1C3DE1A73E13700007487 /* DataOutputStream.h in Sources */,
+				E8B1C3DF1A73E13700007487 /* DataOutputStream.m in Sources */,
+				E8B1C3E01A73E13700007487 /* FileInputStream.h in Sources */,
+				E8B1C3E11A73E13700007487 /* FileInputStream.m in Sources */,
+				E8B1C3E21A73E13700007487 /* FileOutputStream.h in Sources */,
+				E8B1C3E31A73E13700007487 /* FileOutputStream.m in Sources */,
+				E8B1C3E41A73E13700007487 /* GZipInputStream.h in Sources */,
+				E8B1C3E51A73E13700007487 /* GZipInputStream.m in Sources */,
+				E8B1C3E61A73E13700007487 /* GZipOutputStream.h in Sources */,
+				E8B1C3E71A73E13700007487 /* GZipOutputStream.m in Sources */,
+				E8B1C3E81A73E13700007487 /* HashedInputStream.h in Sources */,
+				E8B1C3E91A73E13700007487 /* HashedInputStream.m in Sources */,
+				E8B1C3EA1A73E13700007487 /* HashedOutputStream.h in Sources */,
+				E8B1C3EB1A73E13700007487 /* HashedOutputStream.m in Sources */,
+				E8B1C3EC1A73E13700007487 /* InputStream.h in Sources */,
+				E8B1C3ED1A73E13700007487 /* InputStream.m in Sources */,
+				E8B1C3EE1A73E13700007487 /* OutputStream.h in Sources */,
+				E8B1C3EF1A73E13700007487 /* OutputStream.m in Sources */,
+				E8B1C3F01A73E13700007487 /* Sha256OutputStream.h in Sources */,
+				E8B1C3F11A73E13700007487 /* Sha256OutputStream.m in Sources */,
+				E8B1C3D31A73DFFC00007487 /* AesInputStream.h in Sources */,
+				E8B1C3D41A73DFFC00007487 /* AesInputStream.m in Sources */,
+				E8B1C3D51A73DFFC00007487 /* AesOutputStream.h in Sources */,
+				E8B1C3D61A73DFFC00007487 /* AesOutputStream.m in Sources */,
+				E8B1C3A51A73DED500007487 /* Base64.h in Sources */,
+				E8B1C3A61A73DED500007487 /* Base64.m in Sources */,
+				E8B1C3A71A73DED500007487 /* DDXMLDocument+MKPAdditions.h in Sources */,
+				E8B1C3A81A73DED500007487 /* DDXMLDocument+MKPAdditions.m in Sources */,
+				E8B1C3A91A73DED500007487 /* Kdb.h in Sources */,
+				E8B1C3AA1A73DED500007487 /* Kdb.m in Sources */,
+				E8B1C3AB1A73DED500007487 /* Kdb3Date.h in Sources */,
+				E8B1C3AC1A73DED500007487 /* Kdb3Date.m in Sources */,
+				E8B1C3AD1A73DED500007487 /* Kdb3Node.h in Sources */,
+				E8B1C3AE1A73DED500007487 /* Kdb3Node.m in Sources */,
+				E8B1C3AF1A73DED500007487 /* Kdb3Reader.h in Sources */,
+				E8B1C3B01A73DED500007487 /* Kdb3Reader.m in Sources */,
+				E8B1C3B11A73DED500007487 /* Kdb3Utils.h in Sources */,
+				E8B1C3B21A73DED500007487 /* Kdb3Utils.m in Sources */,
+				E8B1C3B31A73DED500007487 /* Kdb3Writer.h in Sources */,
+				E8B1C3B41A73DED500007487 /* Kdb3Writer.m in Sources */,
+				E8B1C3B51A73DED500007487 /* Kdb4Node.h in Sources */,
+				E8B1C3B61A73DED500007487 /* Kdb4Node.m in Sources */,
+				E8B1C3B71A73DED500007487 /* Kdb4Parser.h in Sources */,
+				E8B1C3B81A73DED500007487 /* Kdb4Parser.m in Sources */,
+				E8B1C3B91A73DED500007487 /* Kdb4Persist.h in Sources */,
+				E8B1C3BA1A73DED500007487 /* Kdb4Persist.m in Sources */,
+				E8B1C3BB1A73DED500007487 /* Kdb4Reader.h in Sources */,
+				E8B1C3BC1A73DED500007487 /* Kdb4Reader.m in Sources */,
+				E8B1C3BD1A73DED500007487 /* Kdb4Writer.h in Sources */,
+				E8B1C3BE1A73DED500007487 /* Kdb4Writer.m in Sources */,
+				E8B1C3BF1A73DED500007487 /* KdbLib.h in Sources */,
+				E8B1C3C01A73DED500007487 /* KdbPassword.h in Sources */,
+				E8B1C3C11A73DED500007487 /* KdbPassword.m in Sources */,
+				E8B1C3C21A73DED500007487 /* KdbReader.h in Sources */,
+				E8B1C3C31A73DED500007487 /* KdbReaderFactory.h in Sources */,
+				E8B1C3C41A73DED500007487 /* KdbReaderFactory.m in Sources */,
+				E8B1C3C51A73DED500007487 /* KdbWriter.h in Sources */,
+				E8B1C3C61A73DED500007487 /* KdbWriterFactory.h in Sources */,
+				E8B1C3C71A73DED500007487 /* KdbWriterFactory.m in Sources */,
+				E8B1C3C81A73DED500007487 /* RandomStream.h in Sources */,
+				E8B1C3C91A73DED500007487 /* RandomStream.m in Sources */,
+				E8B1C3CA1A73DED500007487 /* Salsa20RandomStream.h in Sources */,
+				E8B1C3CB1A73DED500007487 /* Salsa20RandomStream.m in Sources */,
+				E8B1C3CC1A73DED500007487 /* Utils.h in Sources */,
+				E8B1C3CD1A73DED500007487 /* Utils.m in Sources */,
+				E8B1C3CE1A73DED500007487 /* UUID.h in Sources */,
+				E8B1C3CF1A73DED500007487 /* UUID.m in Sources */,
+				E8B1C3A11A73D9B800007487 /* SelectFileViewController.m in Sources */,
+				E8B1C3A41A73DA0E00007487 /* ExtensionCore.m in Sources */,
+				E8B1C3D91A73E03D00007487 /* ExtensionSettings.m in Sources */,
+				E8B1C3991A73D11E00007487 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1290,6 +1484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ActionTemplate;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = WebExtension/WebExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1301,6 +1496,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1311,6 +1507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ActionTemplate;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = WebExtension/WebExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WebExtension/Info.plist;
@@ -1318,6 +1515,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1351,6 +1549,7 @@
 				E85C122C1A67042F006F97A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

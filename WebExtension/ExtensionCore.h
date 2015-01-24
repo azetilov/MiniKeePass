@@ -16,25 +16,17 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "FilesViewController.h"
-#import "DatabaseDocument.h"
+//#import "DatabaseDocument.h"
 
-@interface MiniKeePassAppDelegate : NSObject <UIApplicationDelegate>
+@interface ExtensionCore : NSObject //<UIApplicationDelegate>
 
 @property (nonatomic, strong) UIWindow *window;
-@property (nonatomic, strong) DatabaseDocument *databaseDocument;
+//@property (nonatomic, strong) DatabaseDocument *databaseDocument;
 
-+ (MiniKeePassAppDelegate *)appDelegate;
 + (NSString *)documentsDirectory;
-+ (NSString *)sharedDirectory;
-
-- (void)importUrl:(NSURL *)url;
 
 - (void)closeDatabase;
 - (void)deleteKeychainData;
 - (void)deleteAllData;
-
-- (void)showSettingsView;
-- (void)dismissSettingsView;
 
 @end

@@ -113,15 +113,54 @@ enum {
             NSString *extension = [[file pathExtension] lowercaseString];
             if ([extension isEqualToString:@"kdb"] || [extension isEqualToString:@"kdbx"]) {
                 [self.databaseFiles addObject:file];
+                [self updateSharedFile:file];
             } else {
                 [self.keyFiles addObject:file];
             }
+        }
+    }
+    NSString *sharedContainerPath = [MiniKeePassAppDelegate sharedDirectory];
+    // Remove files that are not present in app container
+    NSArray *sharedContents = [fileManager contentsOfDirectoryAtPath:sharedContainerPath error:nil];
+    for (NSString *file in sharedContents) {
+        if ([dirContents containsObject:file] == NO){
+            NSString *path = [sharedContainerPath stringByAppendingPathComponent:file];
+            [fileManager removeItemAtPath:path error:nil];
         }
     }
 
     // Sort the list of files
     [self.databaseFiles sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     [self.keyFiles sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+}
+
+
+- (void)updateSharedFile:(NSString *)file {
+    NSString *sharedContainerPath = [MiniKeePassAppDelegate sharedDirectory];
+    NSString *documentsDirectory = [MiniKeePassAppDelegate documentsDirectory];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *copyPath = [sharedContainerPath stringByAppendingPathComponent:file];
+    NSURL *copyUrl = [NSURL URLWithString:[copyPath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    if ([fileManager fileExistsAtPath:copyPath]){
+        NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:file];
+        NSString *sourcePath = [documentsDirectory stringByAppendingPathComponent:file];
+        [fileManager copyItemAtPath:sourcePath toPath:tempPath error:nil];
+        NSURL *url = [NSURL fileURLWithPath:tempPath];
+        [fileManager replaceItemAtURL:copyUrl
+                        withItemAtURL:url
+                       backupItemName:nil
+                              options: (NSFileManagerItemReplacementUsingNewMetadataOnly | NSFileManagerItemReplacementWithoutDeletingBackupItem)
+                     resultingItemURL:&copyUrl
+                                error:nil];
+    }
+    else {
+        NSError* error;
+        NSString *path = [documentsDirectory stringByAppendingPathComponent:file];
+        [fileManager copyItemAtPath:path toPath: copyPath error:&error];
+        if (error != nil) {
+            NSLog(@"Error message is %@", [error localizedDescription]);
+        }
+    }
 }
 
 - (void)displayInfoView {

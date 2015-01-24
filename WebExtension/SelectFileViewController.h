@@ -15,26 +15,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import <UIKit/UIKit.h>
-#import "FilesViewController.h"
-#import "DatabaseDocument.h"
+#import <Foundation/Foundation.h>
+//#import "FilesInfoView.h"
 
-@interface MiniKeePassAppDelegate : NSObject <UIApplicationDelegate>
+@class ExtensionCore;
 
-@property (nonatomic, strong) UIWindow *window;
-@property (nonatomic, strong) DatabaseDocument *databaseDocument;
+@interface SelectFileViewController : UITableViewController
 
-+ (MiniKeePassAppDelegate *)appDelegate;
-+ (NSString *)documentsDirectory;
-+ (NSString *)sharedDirectory;
-
-- (void)importUrl:(NSURL *)url;
-
-- (void)closeDatabase;
-- (void)deleteKeychainData;
-- (void)deleteAllData;
-
-- (void)showSettingsView;
-- (void)dismissSettingsView;
+- (void)updateFiles;
 
 @end

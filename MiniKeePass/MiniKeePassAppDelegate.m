@@ -99,6 +99,16 @@
     return [paths objectAtIndex:0];
 }
 
++ (NSString *)sharedDirectory {
+    NSURL *sharedContainerUrl = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.jflan.MiniKeePass.shared"];
+    NSString *path = [[sharedContainerUrl URLByAppendingPathComponent:@"databases" isDirectory:YES] path];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:NO attributes:nil error:nil];
+    }
+    return path;
+}
+
 - (void)importUrl:(NSURL *)url {
     // Get the filename
     NSString *filename = [url lastPathComponent];
