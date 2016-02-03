@@ -20,8 +20,8 @@
     [super loadView];
     [ExtensionCore appDelegate].navigationController = self;
     
-    // TODO: display button to open the containing app
-    // self.toolbarHidden = NO;
+    // TODO: display toolbar button to open the containing app
+    self.toolbarHidden = YES;
     
     self.navigationBarHidden = NO;
     
@@ -35,8 +35,6 @@
 }
 
 - (IBAction)done {
-    // Return any edited content to the host app.
-    // This template doesn't do anything, so we just echo the passed in items.
     
     [self.extensionContext completeRequestReturningItems:self.extensionContext.inputItems completionHandler:nil];
 }
