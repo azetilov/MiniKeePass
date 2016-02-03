@@ -101,7 +101,7 @@ static DatabaseManager *sharedInstance;
     NSString *documentsDirectory = [ExtensionCore documentsDirectory];
     NSString *path = [documentsDirectory stringByAppendingPathComponent:self.selectedFilename];
     
-    NSStringEncoding passwordEncoding = NSUnicodeStringEncoding;
+    NSStringEncoding passwordEncoding = NSUTF8StringEncoding;
     
     // Get the password
     NSString *password = passwordViewController.masterPasswordFieldCell.textField.text;
