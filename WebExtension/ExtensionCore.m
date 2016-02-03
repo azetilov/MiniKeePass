@@ -33,6 +33,20 @@
 @implementation ExtensionCore
 
 
+static ExtensionCore *appDelegate;
+
++ (void)initialize {
+    static BOOL initialized = NO;
+    if (!initialized) {
+        initialized = YES;
+        appDelegate = [[ExtensionCore alloc] init];
+    }
+}
+
++ (ExtensionCore *)appDelegate {
+    return appDelegate;
+}
+
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Check file protection
     [self checkFileProtection];

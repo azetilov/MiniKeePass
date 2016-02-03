@@ -16,13 +16,14 @@
  */
 
 #import <UIKit/UIKit.h>
-//#import "DatabaseDocument.h"
+#import "DatabaseDocument.h"
 
 @interface ExtensionCore : NSObject //<UIApplicationDelegate>
 
 @property (nonatomic, strong) UIWindow *window;
-//@property (nonatomic, strong) DatabaseDocument *databaseDocument;
+@property (nonatomic, strong) DatabaseDocument *databaseDocument;
 
++ (ExtensionCore *)appDelegate;
 + (NSString *)documentsDirectory;
 
 - (void)closeDatabase;
