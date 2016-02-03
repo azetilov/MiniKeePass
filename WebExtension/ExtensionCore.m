@@ -26,8 +26,6 @@
 
 @interface ExtensionCore ()
 
-@property (nonatomic, strong) UINavigationController *navigationController;
-
 @end
 
 @implementation ExtensionCore

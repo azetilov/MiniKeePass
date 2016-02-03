@@ -18,9 +18,9 @@
 #import <UIKit/UIKit.h>
 #import "DatabaseDocument.h"
 
-@interface ExtensionCore : NSObject //<UIApplicationDelegate>
+@interface ExtensionCore : NSObject //TODO: <UIApplicationDelegate>
 
-@property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, strong) UINavigationController *navigationController;
 @property (nonatomic, strong) DatabaseDocument *databaseDocument;
 
 + (ExtensionCore *)appDelegate;
