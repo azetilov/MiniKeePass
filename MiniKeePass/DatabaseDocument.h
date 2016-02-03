@@ -28,7 +28,7 @@
 /// @param password Database password
 /// @param keyFile Path to KeyFile
 /// @return A KeePass DatabaseDocument
-- (id)initWithFilename:(NSString *)filename password:(NSString *)password keyFile:(NSString *)keyFile;
+- (id)initWithFilename:(NSString *)filename password:(NSString *)password keyFile:(NSString *)keyFile passwordEncoding:(NSStringEncoding)passwordEncoding ;
 
 /// Save the current KeePass DatabaseDocument
 - (void)save;

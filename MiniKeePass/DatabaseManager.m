@@ -67,7 +67,8 @@ static DatabaseManager *sharedInstance;
         
         // Load the database
         @try {
-            DatabaseDocument *dd = [[DatabaseDocument alloc] initWithFilename:path password:password keyFile:keyFilePath];
+            NSStringEncoding passwordEncoding = [[AppSettings sharedInstance] passwordEncoding];
+            DatabaseDocument *dd = [[DatabaseDocument alloc] initWithFilename:path password:password keyFile:keyFilePath passwordEncoding:passwordEncoding];
             
             databaseLoaded = YES;
             
@@ -131,8 +132,9 @@ static DatabaseManager *sharedInstance;
 
     // Load the database
     @try {
+        NSStringEncoding passwordEncoding = [[AppSettings sharedInstance] passwordEncoding];
         // Open the database
-        DatabaseDocument *dd = [[DatabaseDocument alloc] initWithFilename:path password:password keyFile:keyFilePath];
+        DatabaseDocument *dd = [[DatabaseDocument alloc] initWithFilename:path password:password keyFile:keyFilePath passwordEncoding:passwordEncoding];
 
         // Store the password in the keychain
         if ([[AppSettings sharedInstance] rememberPasswordsEnabled]) {

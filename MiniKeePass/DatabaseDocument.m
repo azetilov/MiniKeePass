@@ -24,7 +24,8 @@
 
 @implementation DatabaseDocument
 
-- (id)initWithFilename:(NSString *)filename password:(NSString *)password keyFile:(NSString *)keyFile {
+- (id)initWithFilename:(NSString *)filename password:(NSString *)password keyFile:(NSString *)keyFile
+              passwordEncoding:(NSStringEncoding)passwordEncoding {
     self = [super init];
     if (self) {
         if (password == nil && keyFile == nil) {
@@ -34,8 +35,7 @@
         }
 
         self.filename = filename;
-
-        NSStringEncoding passwordEncoding = [[AppSettings sharedInstance] passwordEncoding];
+        
         self.kdbPassword = [[KdbPassword alloc] initWithPassword:password
                                                 passwordEncoding:passwordEncoding
                                                          keyFile:keyFile];
