@@ -17,7 +17,7 @@
 
 #import "ExtensionCore.h"
 #import "SelectFileViewController.h"
-//#import "DatabaseManager.h"
+#import "DbManager.h"
 //#import "AppSettings.h"
 //#import "KeychainUtils.h"
 //#import "Kdb3Writer.h"
@@ -221,7 +221,7 @@ enum {
         case SECTION_DATABASE:
             if (self.editing == NO) {
                 // Load the database
-//                [[DatabaseManager sharedInstance] openDatabaseDocument:[self.databaseFiles objectAtIndex:indexPath.row] animated:YES];
+                [[DatabaseManager sharedInstance] openDatabaseDocument:[self.databaseFiles objectAtIndex:indexPath.row] animated:YES];
             }
             break;
         default:
