@@ -9,4 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UINavigationController
+
+@property (nonatomic, copy) void (^donePressed)(MainViewController *mainViewController);
+
 @end

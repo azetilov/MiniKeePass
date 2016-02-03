@@ -7,11 +7,9 @@
 //
 #import "MainViewController.h"
 #import "SelectFileViewController.h"
+#import "ExtensionCore.h"
 
 @interface MainViewController ()
-
-@property (nonatomic, strong) SelectFileViewController *filesViewController;
-@property (nonatomic, strong) UINavigationController *navigationController;
 
 @end
 
@@ -20,10 +18,36 @@
 - (void)loadView
 {
     [super loadView];
+    [ExtensionCore appDelegate].navigationController = self;
     
-    self.filesViewController = [[SelectFileViewController alloc] initWithStyle:UITableViewStylePlain];
+    // TODO: display button to open the containing app
+    // self.toolbarHidden = NO;
     
-    [self pushViewController:self.filesViewController animated:YES];
+    self.navigationBarHidden = NO;
+    
+    SelectFileViewController *filesViewController = [[SelectFileViewController alloc] initWithStyle:UITableViewStylePlain];
+    
+    filesViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                           target:self
+                                                                                           action:@selector(donePressed:)];
+    
+    [self pushViewController:filesViewController animated:YES];
+}
+
+- (IBAction)done {
+    // Return any edited content to the host app.
+    // This template doesn't do anything, so we just echo the passed in items.
+    
+    [self.extensionContext completeRequestReturningItems:self.extensionContext.inputItems completionHandler:nil];
+}
+
+#pragma mark - Button actions
+
+- (void)donePressed:(id)sender {
+    if (self.donePressed != nil) {
+        self.donePressed(self);
+    }
+    [self done];
 }
 
 @end
