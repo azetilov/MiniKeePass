@@ -43,8 +43,9 @@ enum {
     [super viewDidLoad];
 
     self.title = NSLocalizedString(@"Files", nil);
+    self.tableView.editing = NO;
     self.tableView.allowsSelectionDuringEditing = NO;
-    self.tableView.allowsSelection = NO;
+    self.tableView.allowsSelection = YES;
 }
 
 - (void)viewDidUnload {
@@ -108,20 +109,12 @@ enum {
 
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.scrollEnabled = NO;
-
-    self.navigationItem.rightBarButtonItem = nil;
 }
 
 - (void)hideInfoView {
 
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.tableView.scrollEnabled = YES;
-
-    
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                           target:self
-                                                                                           action:@selector(donePressed:)];
 }
 
 #pragma mark - UITableViewDataSource
@@ -219,6 +212,7 @@ enum {
 
     return cell;
 }
+
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -227,7 +221,7 @@ enum {
         case SECTION_DATABASE:
             if (self.editing == NO) {
                 // Load the database
-                //[[DatabaseManager sharedInstance] openDatabaseDocument:[self.databaseFiles objectAtIndex:indexPath.row] animated:YES];
+//                [[DatabaseManager sharedInstance] openDatabaseDocument:[self.databaseFiles objectAtIndex:indexPath.row] animated:YES];
             }
             break;
         default:
