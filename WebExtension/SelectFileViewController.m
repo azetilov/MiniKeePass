@@ -103,6 +103,11 @@ enum {
     // Sort the list of files
     [self.databaseFiles sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     [self.keyFiles sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    
+    // If there's only one database, then open it
+    if (self.databaseFiles.count == 1) {
+        [[DatabaseManager sharedInstance] openDatabaseDocument:[self.databaseFiles objectAtIndex:0] animated:YES];
+    }
 }
 
 - (void)displayInfoView {
