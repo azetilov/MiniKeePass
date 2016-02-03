@@ -143,8 +143,9 @@
 		E84370381C6112BF00F359A4 /* FormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A3E1AE13A8C9D1006881CA /* FormViewController.m */; };
 		E84370391C61154C00F359A4 /* InfoBar.h in Sources */ = {isa = PBXBuildFile; fileRef = 68915A0913A6F6C200A408B0 /* InfoBar.h */; };
 		E843703A1C61154C00F359A4 /* InfoBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68915A0A13A6F6C200A408B0 /* InfoBar.m */; };
-		E843703B1C61156C00F359A4 /* DatabaseDocument.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D042613A42C81005EBD36 /* DatabaseDocument.h */; };
-		E843703C1C61156C00F359A4 /* DatabaseDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D042713A42C81005EBD36 /* DatabaseDocument.m */; };
+		E84370421C62839B00F359A4 /* DatabaseDocument.h in Sources */ = {isa = PBXBuildFile; fileRef = 689D042613A42C81005EBD36 /* DatabaseDocument.h */; };
+		E84370431C62839B00F359A4 /* DatabaseDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D042713A42C81005EBD36 /* DatabaseDocument.m */; };
+		E84370451C62917500F359A4 /* miniKeePass.js in Resources */ = {isa = PBXBuildFile; fileRef = E84370441C62917500F359A4 /* miniKeePass.js */; };
 		E85C122A1A67042F006F97A8 /* WebExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E85C121F1A67042F006F97A8 /* WebExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E85C12301A6704EA006F97A8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 522D8F9D17E35B0E00BCA329 /* Images.xcassets */; };
 		E8B1C3991A73D11E00007487 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B1C3981A73D11E00007487 /* MainViewController.m */; };
@@ -511,6 +512,7 @@
 		E810DF961B2C172C00C8BA4C /* DbManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbManager.m; sourceTree = "<group>"; };
 		E84370341C610F4000F359A4 /* LockedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LockedViewController.h; sourceTree = "<group>"; };
 		E84370351C610FB200F359A4 /* LockedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LockedViewController.m; sourceTree = "<group>"; };
+		E84370441C62917500F359A4 /* miniKeePass.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = miniKeePass.js; sourceTree = "<group>"; };
 		E85C121F1A67042F006F97A8 /* WebExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WebExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85C12221A67042F006F97A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8B1C3981A73D11E00007487 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
@@ -944,6 +946,7 @@
 		E85C12201A67042F006F97A8 /* WebExtension */ = {
 			isa = PBXGroup;
 			children = (
+				E84370441C62917500F359A4 /* miniKeePass.js */,
 				E8B1C3D71A73E03D00007487 /* ExtensionSettings.h */,
 				E8B1C3D81A73E03D00007487 /* ExtensionSettings.m */,
 				E8B1C3A21A73DA0E00007487 /* ExtensionCore.h */,
@@ -1121,6 +1124,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E84370451C62917500F359A4 /* miniKeePass.js in Resources */,
 				E85C12301A6704EA006F97A8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1240,8 +1244,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E843703B1C61156C00F359A4 /* DatabaseDocument.h in Sources */,
-				E843703C1C61156C00F359A4 /* DatabaseDocument.m in Sources */,
+				E84370421C62839B00F359A4 /* DatabaseDocument.h in Sources */,
+				E84370431C62839B00F359A4 /* DatabaseDocument.m in Sources */,
 				E84370391C61154C00F359A4 /* InfoBar.h in Sources */,
 				E843703A1C61154C00F359A4 /* InfoBar.m in Sources */,
 				E84370371C6112BF00F359A4 /* FormViewController.h in Sources */,
