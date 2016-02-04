@@ -23,9 +23,10 @@
 //#import "DatabaseManager.h"
 #import "KeychainUtils.h"
 //#import "LockScreenManager.h"
+#import <Foundation/Foundation.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 
 @interface ExtensionCore ()
-
 @end
 
 @implementation ExtensionCore
@@ -48,16 +49,16 @@ static ExtensionCore *appDelegate;
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Check file protection
     [self checkFileProtection];
-
+    
     // Get the time when the application last exited
     ExtensionSettings *appSettings = [ExtensionSettings sharedInstance];
     NSDate *exitTime = [appSettings exitTime];
-
+    
     // Check if closing the database is enabled
     if ([appSettings closeEnabled] && exitTime != nil) {
         // Get the lock timeout (in seconds)
         NSInteger closeTimeout = [appSettings closeTimeout];
-
+        
         // Check if it's been longer then close timeout
         NSTimeInterval timeInterval = [exitTime timeIntervalSinceNow];
         if (timeInterval < -closeTimeout) {
@@ -73,6 +74,27 @@ static ExtensionCore *appDelegate;
 + (NSString *)sharedDirectory {
     NSURL *sharedContainerUrl = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:APP_GROUP_ID];
     return [[sharedContainerUrl URLByAppendingPathComponent:@"databases" isDirectory:YES] path];
+}
+
+- (void)done:(NSArray *)results {
+    
+    NSExtensionItem *extensionItem = [[NSExtensionItem alloc] init];
+    NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
+    
+    NSDictionary *item = [[NSDictionary alloc] initWithObjectsAndKeys: result, @"NSExtensionJavaScriptFinalizeArgumentKey", nil];
+    
+    NSItemProvider *itemProvider = [[NSItemProvider alloc] initWithItem: item typeIdentifier: (NSString *)kUTTypePropertyList];
+    extensionItem.attachments = [[NSArray alloc] initWithObjects:itemProvider, nil];
+    
+    NSExtensionContext *extensionContext = self.navigationController.extensionContext;
+    if (results.count > 0) {
+        KdbEntry *entry = (KdbEntry *)results.firstObject;
+        if (entry != nil) {
+            result[@"username"] = entry.username;
+            result[@"password"] = entry.password;
+        }
+    }
+    [extensionContext completeRequestReturningItems:[[NSArray alloc] initWithObjects:extensionItem, nil] completionHandler:nil];
 }
 
 - (void)closeDatabase {

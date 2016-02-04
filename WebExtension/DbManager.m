@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Self. All rights reserved.
 //
 
+#import "DatabaseDocument.h"
 #import "DbManager.h"
 #import "ExtensionCore.h"
 #import "KeychainUtils.h"
@@ -28,7 +29,7 @@ static DatabaseManager *sharedInstance;
     return sharedInstance;
 }
 
-- (void)openDatabaseDocument:(NSString*)filename animated:(BOOL)animated {
+- (void)openDatabaseDocument:(NSString*)filename animated:(BOOL)animated searchUrl:(NSURL *)url {
     BOOL databaseLoaded = NO;
     
     self.selectedFilename = filename;
@@ -74,7 +75,7 @@ static DatabaseManager *sharedInstance;
         // Prompt the user for a password
         LockedViewController *passwordViewController = [[LockedViewController alloc] initWithFilename:filename];
         passwordViewController.donePressed = ^(FormViewController *formViewController) {
-            [self openDatabaseWithPasswordViewController:(LockedViewController *)formViewController];
+            [self openDatabaseWithPasswordViewController:(LockedViewController *)formViewController searchUrl:url];
         };
         passwordViewController.cancelPressed = ^(FormViewController *formViewController) {
             [formViewController dismissViewControllerAnimated:YES completion:nil];
@@ -97,7 +98,7 @@ static DatabaseManager *sharedInstance;
     }
 }
 
-- (void)openDatabaseWithPasswordViewController:(LockedViewController *)passwordViewController {
+- (void)openDatabaseWithPasswordViewController:(LockedViewController *)passwordViewController searchUrl:(NSURL *)url {
     NSString *documentsDirectory = [ExtensionCore documentsDirectory];
     NSString *path = [documentsDirectory stringByAppendingPathComponent:self.selectedFilename];
     
@@ -135,11 +136,29 @@ static DatabaseManager *sharedInstance;
                       andServiceName:@"com.jflan.MiniKeePass.keyfiles"];
         }
         
-        // Dismiss the view controller, and after animation set the database document
-        [passwordViewController dismissViewControllerAnimated:YES completion:^{
+        // Dismiss the view controller, and search in the database document
+        [passwordViewController dismissViewControllerAnimated:NO completion:^{
             // Set the database document in the application delegate
             ExtensionCore *appDelegate = [ExtensionCore appDelegate];
             appDelegate.databaseDocument = dd;
+            NSMutableArray *results = [[NSMutableArray alloc] init];
+            NSURL *searchUrl = appDelegate.searchUrl;
+            [DatabaseDocument searchGroup:dd.kdbTree.root searchText:[searchUrl absoluteString] results:results];
+            
+            // no results? - try searching by hostname (without scheme and query params)
+            if (results.count == 0) {
+                NSString *hostname = [searchUrl host];
+                [DatabaseDocument searchGroup:dd.kdbTree.root searchText:hostname results:results];
+                
+                // still no results? - try removing 'www' from hostname if it's there
+                if (results.count == 0 && [hostname rangeOfString:@"www." options:NSCaseInsensitiveSearch].length > 0) {
+                    hostname = [hostname substringFromIndex:4];
+                    [DatabaseDocument searchGroup:dd.kdbTree.root searchText:hostname results:results];
+                }
+            }
+            
+            // return results
+            [appDelegate done: results];
         }];
     } @catch (NSException *exception) {
         NSLog(@"%@", exception);

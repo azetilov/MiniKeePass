@@ -106,7 +106,7 @@ enum {
     
     // If there's only one database, then open it
     if (self.databaseFiles.count == 1) {
-        [[DatabaseManager sharedInstance] openDatabaseDocument:[self.databaseFiles objectAtIndex:0] animated:YES];
+        [[DatabaseManager sharedInstance] openDatabaseDocument:[self.databaseFiles objectAtIndex:0] animated:NO searchUrl:nil];
     }
 }
 
@@ -226,7 +226,7 @@ enum {
         case SECTION_DATABASE:
             if (self.editing == NO) {
                 // Load the database
-                [[DatabaseManager sharedInstance] openDatabaseDocument:[self.databaseFiles objectAtIndex:indexPath.row] animated:YES];
+                [[DatabaseManager sharedInstance] openDatabaseDocument:[self.databaseFiles objectAtIndex:indexPath.row] animated:YES searchUrl:nil];
             }
             break;
         default:

@@ -22,10 +22,12 @@
 
 @property (nonatomic, strong) UINavigationController *navigationController;
 @property (nonatomic, strong) DatabaseDocument *databaseDocument;
+@property (nonatomic, strong) NSURL *searchUrl;
 
 + (ExtensionCore *)appDelegate;
 + (NSString *)documentsDirectory;
 
+- (void)done:(NSArray *)results;
 - (void)closeDatabase;
 - (void)deleteKeychainData;
 - (void)deleteAllData;
