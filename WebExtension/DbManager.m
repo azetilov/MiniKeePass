@@ -98,7 +98,7 @@ static DatabaseManager *sharedInstance;
     }
 }
 
-- (void)openDatabaseWithPasswordViewController:(LockedViewController *)passwordViewController searchUrl:(NSURL *)url {
+- (void)openDatabaseWithPasswordViewController:(LockedViewController *)passwordViewController searchUrl:(NSURL *)searchUrl {
     NSString *documentsDirectory = [ExtensionCore documentsDirectory];
     NSString *path = [documentsDirectory stringByAppendingPathComponent:self.selectedFilename];
     
@@ -142,15 +142,14 @@ static DatabaseManager *sharedInstance;
             ExtensionCore *appDelegate = [ExtensionCore appDelegate];
             appDelegate.databaseDocument = dd;
             NSMutableArray *results = [[NSMutableArray alloc] init];
-            NSURL *searchUrl = appDelegate.searchUrl;
             [DatabaseDocument searchGroup:dd.kdbTree.root searchText:[searchUrl absoluteString] results:results];
             
-            // no results? - try searching by hostname (without scheme and query params)
+            // no results? - try searching by domain (without scheme and query params)
             if (results.count == 0) {
                 NSString *hostname = [searchUrl host];
                 [DatabaseDocument searchGroup:dd.kdbTree.root searchText:hostname results:results];
                 
-                // still no results? - try removing 'www' from hostname if it's there
+                // still no results? - try searching by naked domain
                 if (results.count == 0 && [hostname rangeOfString:@"www." options:NSCaseInsensitiveSearch].length > 0) {
                     hostname = [hostname substringFromIndex:4];
                     [DatabaseDocument searchGroup:dd.kdbTree.root searchText:hostname results:results];
