@@ -71,6 +71,7 @@ static ExtensionCore *appDelegate;
     NSURL *sharedContainerUrl = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:APP_GROUP_ID];
     return [[sharedContainerUrl URLByAppendingPathComponent:@"databases" isDirectory:YES] path];
 }
+
 + (NSString *)sharedDirectory {
     NSURL *sharedContainerUrl = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:APP_GROUP_ID];
     return [[sharedContainerUrl URLByAppendingPathComponent:@"databases" isDirectory:YES] path];

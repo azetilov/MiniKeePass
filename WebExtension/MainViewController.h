@@ -10,6 +10,6 @@
 
 @interface MainViewController : UINavigationController
 
-@property (nonatomic, copy) void (^donePressed)(MainViewController *mainViewController);
+@property (nonatomic, copy) void (^cancelPressed)(MainViewController *mainViewController);
 
 @end

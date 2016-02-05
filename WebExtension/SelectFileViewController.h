@@ -22,6 +22,8 @@
 
 @interface SelectFileViewController : UITableViewController
 
+@property (nonatomic, strong) NSURL *searchUrl;
+
 - (void)updateFiles;
 
 @end

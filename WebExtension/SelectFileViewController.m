@@ -35,6 +35,7 @@ enum {
 
 @property (nonatomic, strong) NSMutableArray *databaseFiles;
 @property (nonatomic, strong) NSMutableArray *keyFiles;
+
 @end
 
 @implementation SelectFileViewController
@@ -51,7 +52,7 @@ enum {
 - (void)viewDidUnload {
     [super viewDidUnload];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -106,7 +107,7 @@ enum {
     
     // If there's only one database, then open it
     if (self.databaseFiles.count == 1) {
-        [[DatabaseManager sharedInstance] openDatabaseDocument:[self.databaseFiles objectAtIndex:0] animated:NO searchUrl:nil];
+        [[DatabaseManager sharedInstance] openDatabaseDocument:[self.databaseFiles objectAtIndex:0] animated:NO searchUrl:self.searchUrl];
     }
 }
 
@@ -226,7 +227,7 @@ enum {
         case SECTION_DATABASE:
             if (self.editing == NO) {
                 // Load the database
-                [[DatabaseManager sharedInstance] openDatabaseDocument:[self.databaseFiles objectAtIndex:indexPath.row] animated:YES searchUrl:nil];
+                [[DatabaseManager sharedInstance] openDatabaseDocument:[self.databaseFiles objectAtIndex:indexPath.row] animated:YES searchUrl:self.searchUrl];
             }
             break;
         default:
@@ -245,10 +246,4 @@ enum {
     //[[MiniKeePassAppDelegate appDelegate] importUrl:url];
 }
 
-
-- (IBAction)donePressed:(id)sender {
-    //[self.navigationController popViewControllerAnimated:YES];
-    [self.extensionContext completeRequestReturningItems:self.extensionContext.inputItems completionHandler:nil];
-    //[self dismissViewControllerAnimated:YES completion:nil];
-}
 @end

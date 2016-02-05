@@ -12,6 +12,8 @@
 
 @interface MainViewController ()
 
+@property (nonatomic, strong) SelectFileViewController *filesViewController;
+
 @end
 
 @implementation MainViewController
@@ -26,21 +28,11 @@
     
     self.navigationBarHidden = NO;
     
-    SelectFileViewController *filesViewController = [[SelectFileViewController alloc] initWithStyle:UITableViewStylePlain];
+    self.filesViewController = [[SelectFileViewController alloc] initWithStyle:UITableViewStylePlain];
     
-    filesViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                                                           target:self
-                                                                                           action:@selector(donePressed:)];
-    
-    [self pushViewController:filesViewController animated:YES];
-}
-
-- (void)presentSelectFileViewControllerForSearchUrl:(NSURL*)url {
-    
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
+    self.filesViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                                         target:self
+                                                                                                         action:@selector(cancelPressed:)];
     
     NSExtensionItem *item = self.extensionContext.inputItems.firstObject;
     NSItemProvider *itemProvider = item.attachments.firstObject;
@@ -49,24 +41,28 @@
             NSDictionary *results = (NSDictionary *)item;
             NSString *requestUrl = [[results objectForKey:NSExtensionJavaScriptPreprocessingResultsKey] objectForKey:@"url"];
             NSURL *url = [[NSURL alloc] initWithString:requestUrl];
-            [ExtensionCore appDelegate].searchUrl = url;
-            [self presentSelectFileViewControllerForSearchUrl:url];
+            [self presentFilesViewController: url];
         }];
     }
 }
 
-- (IBAction)done {
+- (void)presentFilesViewController: (NSURL *)url {
     
-    [self.extensionContext completeRequestReturningItems:self.extensionContext.inputItems completionHandler:nil];
+    self.filesViewController.searchUrl = url;
+    
+    [self pushViewController:self.filesViewController animated:YES];
+}
+
+- (void)cancel {
+    [self.extensionContext completeRequestReturningItems:self.navigationController.extensionContext.inputItems completionHandler:nil];
 }
 
 #pragma mark - Button actions
 
-- (void)donePressed:(id)sender {
-    if (self.donePressed != nil) {
-        self.donePressed(self);
+- (void)cancelPressed:(id)sender {
+    if (self.cancelPressed != nil) {
+        [self cancelPressed];
     }
-    [self done];
+    [self cancel];
 }
-
 @end
